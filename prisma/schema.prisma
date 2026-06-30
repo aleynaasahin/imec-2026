@@ -1,0 +1,135 @@
+// IMEC 2026 — Database schema
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Key→{tr,en} translation store powering every editable string on the site.
+model Text {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique
+  tr        String   @default("")
+  en        String   @default("")
+  group     String   @default("general") // e.g. "header", "home_hero", "about"
+  label     String   @default("")        // human-readable name shown in admin
+  multiline Boolean  @default(false)     // true → render as textarea
+  updatedAt DateTime @updatedAt
+}
+
+// Hero (manşet) carousel slides
+model HeroSlide {
+  id           Int     @id @default(autoincrement())
+  imageUrl     String  @default("")
+  titleTr      String  @default("")
+  titleEn      String  @default("")
+  subtitleTr   String  @default("")
+  subtitleEn   String  @default("")
+  buttonTextTr String  @default("")
+  buttonTextEn String  @default("")
+  buttonUrl    String  @default("")
+  order        Int     @default(0)
+  active       Boolean @default(true)
+}
+
+// Sponsor tiers (Ana Sponsor / Platin / Altın / Gümüş ...)
+model SponsorTier {
+  id        Int       @id @default(autoincrement())
+  nameTr    String    @default("")
+  nameEn    String    @default("")
+  order     Int       @default(0)
+  sponsors  Sponsor[]
+}
+
+model Sponsor {
+  id       Int         @id @default(autoincrement())
+  name     String      @default("")
+  logoUrl  String      @default("")
+  url      String      @default("")
+  order    Int         @default(0)
+  tier     SponsorTier @relation(fields: [tierId], references: [id], onDelete: Cascade)
+  tierId   Int
+}
+
+// Announcements (Duyurular)
+model Announcement {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  titleTr     String   @default("")
+  titleEn     String   @default("")
+  bodyTr      String   @default("")
+  bodyEn      String   @default("")
+  imageUrl    String   @default("")
+  publishedAt DateTime @default(now())
+  published   Boolean  @default(true)
+}
+
+// Committees (Komiteler)
+model CommitteeGroup {
+  id        Int             @id @default(autoincrement())
+  nameTr    String          @default("")
+  nameEn    String          @default("")
+  order     Int             @default(0)
+  members   CommitteeMember[]
+}
+
+model CommitteeMember {
+  id         Int            @id @default(autoincrement())
+  fullName   String         @default("")
+  titleTr    String         @default("")
+  titleEn    String         @default("")
+  affiliation String        @default("")
+  photoUrl   String         @default("")
+  order      Int            @default(0)
+  group      CommitteeGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  groupId    Int
+}
+
+// Themes (Ana Temalar)
+model Theme {
+  id            Int    @id @default(autoincrement())
+  numberLabel   String @default("")
+  titleTr       String @default("")
+  titleEn       String @default("")
+  descriptionTr String @default("")
+  descriptionEn String @default("")
+  order         Int    @default(0)
+}
+
+// Configurable registration form fields
+model FormField {
+  id        Int     @id @default(autoincrement())
+  key       String  @unique
+  labelTr   String  @default("")
+  labelEn   String  @default("")
+  type      String  @default("text") // text | email | phone | select | checkbox | textarea
+  required  Boolean @default(false)
+  options   String  @default("")     // for select: "Tr1|En1;;Tr2|En2;;..."
+  order     Int     @default(0)
+  enabled   Boolean @default(true)
+}
+
+// Submitted registrations (form data stored as JSON string)
+model Registration {
+  id        Int      @id @default(autoincrement())
+  data      String   // JSON: { fieldKey: value, ... }
+  createdAt DateTime @default(now())
+}
+
+// Site-wide settings (key/value)
+model Setting {
+  key   String @id
+  value String @default("")
+}
+
+// Uploaded media (so admin can pick reused logos for organizers etc.)
+model Media {
+  id        Int      @id @default(autoincrement())
+  url       String
+  name      String   @default("")
+  tag       String   @default("") // organizer_mayem, organizer_mapeg, organizer_mta, organizer_ministry, generic
+  createdAt DateTime @default(now())
+}
