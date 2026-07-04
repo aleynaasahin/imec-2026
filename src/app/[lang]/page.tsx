@@ -7,6 +7,7 @@ import ThemesPreview from '@/components/ThemesPreview';
 import AnnouncementsPreview from '@/components/AnnouncementsPreview';
 import SponsorsSection from '@/components/SponsorsSection';
 import OrganizerStrip from '@/components/OrganizerStrip';
+import TopLogosStrip from '@/components/TopLogosStrip';
 import { notFound } from 'next/navigation';
 
 export const dynamic = 'force-dynamic';
@@ -34,14 +35,19 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
   const sponsorsEnabled = (shell.settings['sponsors_enabled'] || '0') === '1';
   const countdownEnabled = (shell.settings['countdown_enabled'] || '1') === '1';
+  const topLogosEnabled = (shell.settings['top_logos_enabled'] || '0') === '1';
   const eventDateIso = shell.settings['event_date_iso'] || '2026-11-04T09:00:00+03:00';
+
+  const organizers = media.map((m) => ({ tag: m.tag, url: m.url, name: m.name }));
 
   return (
     <>
       <HeroCarousel slides={slides} lang={lang} />
 
+      {topLogosEnabled ? <TopLogosStrip lang={lang} organizers={organizers} /> : null}
+
       {countdownEnabled ? (
-        <section className="relative -mt-12 z-10">
+        <section className={`relative z-10 ${topLogosEnabled ? 'mt-10' : '-mt-12'}`}>
           <div className="container-content">
             <Countdown
               targetIso={eventDateIso}

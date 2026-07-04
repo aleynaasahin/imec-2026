@@ -9,6 +9,7 @@ const SETTINGS: { key: string; label: string; hint?: string; type?: 'text' | 'ch
   { key: 'contact_phone', label: 'İletişim Telefonu' },
   { key: 'event_date_iso', label: 'Etkinlik Başlangıç Tarihi (ISO)', hint: 'Örn: 2026-11-04T09:00:00+03:00', type: 'datetime' },
   { key: 'countdown_enabled', label: 'Geri sayımı göster', type: 'checkbox' },
+  { key: 'top_logos_enabled', label: 'Üst logo şeridini göster (Enerji Bakanlığı · MAPEG · MAYEM)', type: 'checkbox' },
   { key: 'sponsors_enabled', label: 'Sponsorlar bölümünü göster', type: 'checkbox' },
   { key: 'social_instagram', label: 'Instagram URL' },
   { key: 'social_youtube', label: 'YouTube URL' },
