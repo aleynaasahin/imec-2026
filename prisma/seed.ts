@@ -262,6 +262,136 @@ const SPEAKER_GROUPS: {
   },
 ];
 
+// English translations for seeded speakers, matched by fullName and force-applied
+// on every seed run (safe to rerun; keeps EN copy in sync with the source data).
+const SPEAKER_TRANSLATIONS: {
+  fullName: string;
+  titleEn: string;
+  topicEn: string;
+  bioEn: string;
+}[] = [
+  {
+    fullName: 'Dr. Hakan Kahraman',
+    titleEn: 'Country Manager, Türkiye',
+    topicEn: '',
+    bioEn: "Dr. Hakan Arden Kahraman specialises in technical due diligence (TDD) for mining and industrial projects, investor reporting, and independent engineering services for lending institutions. In this capacity he advises international financial institutions and investors on the feasibility, risk and technical soundness of mining projects. He currently serves as Technical Manager at DMT Group Türkiye, where he works on independent engineering, project evaluation and investment verification for mining and infrastructure projects. He is a graduate of the Geological Engineering programme at Istanbul Technical University (ITU).",
+  },
+  {
+    fullName: 'Sodhie Naicker',
+    titleEn: 'Managing Director',
+    topicEn: '',
+    bioEn: "Sodhiesiven (Sodhie) B. Naicker is a geoscientist and senior mining executive with more than 30 years of experience across the full mining value chain in Africa and international markets. He is a founding partner and Managing Director of DMT Kai Batla. He is recognised for providing technical and strategic advisory services in exploration, mining operations, project evaluation and technical due diligence, mining economics and policy development. During his senior tenure at Mintek he led mining economics and strategy work, contributed to national and commodity-based planning, and strengthened public-industry collaboration. He subsequently transformed DMT Kai Batla from a geological consultancy into a multidisciplinary advisory firm operating across Sub-Saharan Africa. He also serves as an independent board member of DMT United Kingdom and as AusIMM's International Representative for Southern Africa.",
+  },
+  {
+    fullName: 'Kai Hoffman',
+    titleEn: 'Owner and CEO',
+    topicEn: '',
+    bioEn: "Kai Hoffman has been active in the junior mining sector since 2008 and has experienced both the highs and lows of the industry. He is the owner and CEO of Soar Financial Group, which operates in publishing, corporate communications, the organisation of leading investment conferences, financial advisory and data analytics. He also serves as an independent board member of Labrador Gold Corp. (TSX-V: LAB).",
+  },
+  {
+    fullName: 'Christian Masurenko',
+    titleEn: 'Vice-President, European Federation of Geologists',
+    topicEn: '',
+    bioEn: "Christian Masurenko holds the title of European Geologist (EurGeol) and is a senior geologist and mining executive with more than 25 years of international experience in exploration, mining, ESG and responsible resource management. He has served as CEO, project manager and strategic advisor on mining and infrastructure projects worth billions of US dollars across Africa, Europe and South America. His areas of expertise include critical raw materials, feasibility studies, environmental and social governance, community relations and sustainable supply chains. He is qualified to act as a Competent Person under the JORC, NI 43-101 and PERC reporting codes.",
+  },
+  {
+    fullName: 'Stephan Pueschel',
+    titleEn: 'Co-Head of Metals and Mining',
+    topicEn: '',
+    bioEn: "Stephan Pueschel is Co-Head of the Metals and Mining team at KfW IPEX-Bank, focusing on financing the full value chain from mining and processing to metal production and recycling. He has worked across various departments within the KfW Group for more than 20 years, gaining extensive experience in international project finance and asset-based financing.",
+  },
+  {
+    fullName: 'John Pereira',
+    titleEn: 'Exploration Manager',
+    topicEn: '',
+    bioEn: "A senior geologist with 25 years of experience in exploration projects and country management within the mining and metals sector. He has worked on exploration and mining projects for numerous publicly listed companies and specialises in mineral exploration, geosciences, mining, engineering geology, minerals, project evaluation and technical due diligence.",
+  },
+  {
+    fullName: 'Maria Alejandra Delgado',
+    titleEn: 'Legal, External Affairs and Sustainability Expert',
+    topicEn: '',
+    bioEn: "A mining executive with extensive national and international experience in Lima, London, Florida and across Latin America. A qualified lawyer, she specialises in general and project management, legal and compliance advisory, communications, corporate governance, external and public relations, inclusion and diversity, corporate affairs and sustainability.",
+  },
+  {
+    fullName: 'Dr. Yusuf Ziya Özkan',
+    titleEn: 'Geological Engineer',
+    topicEn: 'Cost Analysis in Mineral Exploration — The Economics of Exploration',
+    bioEn: "Dr. Yusuf Ziya Özkan is a geological engineer specialising in economic geology and mineral exploration. He has many years of experience in the design of exploration projects, mineral resource and reserve estimation, geostatistics, drilling optimisation and assessment of mineral potential. He is regarded as one of Türkiye's leading names in mineral resource and reserve estimation.",
+  },
+  {
+    fullName: 'Prof. Dr. İlkay Kuşcu',
+    titleEn: 'Geological Engineer',
+    topicEn: 'A Mineral Systems Approach to Exploring Deep-Seated Ore Deposits in Türkiye: The Need for a Paradigm Shift',
+    bioEn: "Prof. Dr. İlkay Kuşcu is a geological engineer specialising in ore deposits and economic geology. He served for many years as a faculty member in the Department of Mineral Deposits at Muğla Sıtkı Koçman University's Department of Geological Engineering, and also held the position of Dean. His research focuses on porphyry copper deposits, exploration geology, hydrothermal alteration and the metallogeny of Türkiye.",
+  },
+  {
+    fullName: 'Doç. Dr. Okay Çimen',
+    titleEn: 'Geological Engineer',
+    topicEn: 'Critical Raw Materials — Geological Discoveries, Supply Chain Vulnerabilities and Minerals Required for Green Energy (Lithium, Cobalt, REE, Copper)',
+    bioEn: "He completed his undergraduate and master's degrees at Ankara University's Department of Geological Engineering, and his PhD in 2016 at the Department of Geological Engineering of Middle East Technical University (METU). His research focuses on the geological formation environments of Rare Earth Elements (REE). Between 2019 and 2023 he served as founding director of Munzur University's Rare Earth Elements Application and Research Centre (MUNTEAM).",
+  },
+  {
+    fullName: 'Dr. İbrahim Kürşat Tuna',
+    titleEn: 'International Relations Expert',
+    topicEn: 'The Geopolitics of Critical Minerals in the Context of International Relations and Its Impact on Mineral Exploration',
+    bioEn: "A graduate of the Department of International Relations at Ankara University's Faculty of Political Science, he has conducted research on the impact of critical minerals on national and international security and received his doctorate in 2024. He currently serves as a member of the TOBB Mining Sector Assembly.",
+  },
+  {
+    fullName: 'Mert Köksal',
+    titleEn: 'Geophysical Engineer',
+    topicEn: 'The Role of Geophysics in Mineral Exploration and Next-Generation Technologies',
+    bioEn: "He has been active in metallic mineral exploration for more than 18 years. Throughout his career he has worked on numerous exploration projects in Türkiye, North America, the Balkans, Asia and Africa, taking responsibility for field operations, geophysical surveys and project management.",
+  },
+  {
+    fullName: 'Abdullah Buhur',
+    titleEn: 'Laboratories Director',
+    topicEn: 'The Role of Laboratories in the Mining Cycle and Integrated Quality Control Practices',
+    bioEn: "Abdullah Buhur was one of the founding partners of ARGETEST in 2012 and has many years of experience in analytical and laboratory services for the mining sector. He continues to manage laboratories he has established in Türkiye and abroad.",
+  },
+  {
+    fullName: 'Dr. Melik Zafer Yıldız',
+    titleEn: 'Industrial Sociologist',
+    topicEn: 'Building Social Consent and Social Acceptance During the Exploration Phase, and Its Dynamics',
+    bioEn: "Yıldız has more than 25 years of experience as a sociologist in social, industrial and organisational practice, development and management within the mining, energy and construction sectors. He has held management positions at the Republic of Türkiye Prime Ministry's GAP Administration, Flokser Holding, Tepe İnşaat and Çayeli Bakır İşletmeleri.",
+  },
+  {
+    fullName: 'Dr. Özgür Dirim Özkan',
+    titleEn: 'Sociologist',
+    topicEn: 'First Encounter, First Impression, First Risk: The Importance of Social Acceptance During the Exploration Stage',
+    bioEn: "Özkan is a researcher and consultant specialising in social anthropology. He has worked on field research, social impact assessment, stakeholder engagement and community relations for energy, mining, infrastructure and social development projects.",
+  },
+  {
+    fullName: 'Sezai Aydın',
+    titleEn: 'Mining Engineer',
+    topicEn: 'The Legal Nature of Exploration Activities in the Public and Private Sectors — A Public Function or a Commercial Activity?',
+    bioEn: "He began his career at ETİKROM A.Ş. and went on to work in the ore-processing unit of the General Directorate of Mineral Research and Exploration (MTA) and as an engineer, division manager and department head at the General Directorate of Mining Affairs. He is a UMREK Competent Person.",
+  },
+  {
+    fullName: 'Şahin Özdemir',
+    titleEn: 'Mining Engineer',
+    topicEn: 'The Environmental Impact of Mineral Exploration Activities / Social Communication',
+    bioEn: '',
+  },
+  {
+    fullName: 'Dr. Uğur Dağ & Halim Özatay',
+    titleEn: 'Archaeologists',
+    topicEn: 'Legal Processes for the Management of Cultural Heritage in Mineral Exploration and Shortcomings Encountered in Practice',
+    bioEn: "Dr. Haydar Uğur Dağ is a graduate of the Department of Archaeology at Hacettepe University and completed his doctorate on archaeological heritage impact assessment studies. Halim Özatay has worked for more than 25 years at REGİO as a specialist in archaeological surface surveys and cultural heritage management. Both are among the founders of REGİO Cultural Heritage Management Consultancy.",
+  },
+  {
+    fullName: 'Bişar Sercan Değirmenci',
+    titleEn: 'Lawyer',
+    topicEn: 'Permitting Processes and Disputes During the Exploration Period',
+    bioEn: "He holds an undergraduate degree in Law and International Relations. He has served as Legal Counsel for a group of companies operating in the mining sector for approximately twelve years, and is a participant in the World Association of Mining Lawyers.",
+  },
+  {
+    fullName: 'Cem Boz',
+    titleEn: 'Lawyer, LL.M.',
+    topicEn: '',
+    bioEn: "Cem Boz is a lawyer and academic with more than 18 years of international experience in Mining and Natural Resources Law and International Trade Law. He is a former lecturer at Istanbul Technical University's Faculty of Mines and serves as a member of the GEMAD Board of Directors.",
+  },
+];
+
 const COMMITTEES = [
   {
     nameTr: 'Koordinasyon',
@@ -406,6 +536,14 @@ async function seed() {
         });
       }
     }
+  }
+
+  console.log('Applying speaker English translations…');
+  for (const tr of SPEAKER_TRANSLATIONS) {
+    await prisma.speaker.updateMany({
+      where: { fullName: tr.fullName },
+      data: { titleEn: tr.titleEn, topicEn: tr.topicEn, bioEn: tr.bioEn },
+    });
   }
 
   console.log('Seeding form fields…');
