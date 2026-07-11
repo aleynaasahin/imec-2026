@@ -65,7 +65,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         tiers={tiers}
         lang={lang}
         enabled={sponsorsEnabled}
-        heading={t('sponsors.heading', lang === 'tr' ? 'Sponsorlarımız' : 'Our Sponsors')}
+        heading={t('sponsors.heading', lang === 'tr' ? 'Sponsorlarımız & Destekçilerimiz' : 'Our Sponsors & Supporters')}
       />
 
       {/* About / intro */}

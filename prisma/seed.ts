@@ -49,7 +49,7 @@ const TEXTS: TextSeed[] = [
   { key: 'home.underAuspices', group: 'home', label: 'Himayesinde başlığı', tr: 'Himayesinde', en: 'Under the Auspices of' },
 
   // Sponsors
-  { key: 'sponsors.heading', group: 'sponsors', label: 'Sponsorlar başlığı', tr: 'Sponsorlarımız', en: 'Our Sponsors' },
+  { key: 'sponsors.heading', group: 'sponsors', label: 'Sponsorlar başlığı', tr: 'Sponsorlarımız & Destekçilerimiz', en: 'Our Sponsors & Supporters' },
 
   // About
   { key: 'about.kicker', group: 'about', label: 'Hakkımızda kicker', tr: 'Hakkımızda', en: 'About' },
@@ -208,6 +208,7 @@ const TEXT_OVERRIDES: { key: string; tr: string; en: string }[] = [
     en: 'The conference is held under the auspices of the Republic of Türkiye — Ministry of Energy and Natural Resources and the General Directorate of Mining and Petroleum Affairs (MAPEG).',
   },
   { key: 'nav.themes', tr: 'Temalar', en: 'Themes' },
+  { key: 'sponsors.heading', tr: 'Sponsorlarımız & Destekçilerimiz', en: 'Our Sponsors & Supporters' },
 ];
 
 // Keys that no longer exist in the site (superseded by nav.program / nav.themes / nav.speakers)
