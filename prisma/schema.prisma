@@ -88,6 +88,32 @@ model CommitteeMember {
   groupId    Int
 }
 
+// Speakers (Konuşmacılar)
+model SpeakerGroup {
+  id       Int       @id @default(autoincrement())
+  nameTr   String    @default("")
+  nameEn   String    @default("")
+  order    Int       @default(0)
+  speakers Speaker[]
+}
+
+model Speaker {
+  id           Int          @id @default(autoincrement())
+  fullName     String       @default("")
+  titleTr      String       @default("")
+  titleEn      String       @default("")
+  organization String       @default("")
+  topicTr      String       @default("")
+  topicEn      String       @default("")
+  bioTr        String       @default("")
+  bioEn        String       @default("")
+  photoUrl     String       @default("")
+  order        Int          @default(0)
+  published    Boolean      @default(true)
+  group        SpeakerGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  groupId      Int
+}
+
 // Themes (Ana Temalar)
 model Theme {
   id            Int    @id @default(autoincrement())

@@ -190,10 +190,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           'home.underAuspices',
           lang === 'tr' ? 'Himayesinde' : 'Under the Auspices of',
         )}
-        withSupport={t(
-          'home.withSupport',
-          lang === 'tr' ? 'Desteğiyle' : 'With the Support of',
-        )}
       />
     </>
   );

@@ -23,7 +23,9 @@ export async function loadShell(lang: Lang): Promise<SiteShellData> {
   const navItems = [
     { href: `/${lang}`, label: t('nav.home', lang === 'tr' ? 'Anasayfa' : 'Home') },
     { href: `/${lang}/about`, label: t('nav.about', lang === 'tr' ? 'Hakkımızda' : 'About') },
-    { href: `/${lang}/themes`, label: t('nav.themes', lang === 'tr' ? 'Program / Temalar' : 'Program / Themes') },
+    { href: `/${lang}/program`, label: t('nav.program', lang === 'tr' ? 'Program' : 'Programme') },
+    { href: `/${lang}/themes`, label: t('nav.themes', lang === 'tr' ? 'Temalar' : 'Themes') },
+    { href: `/${lang}/speakers`, label: t('nav.speakers', lang === 'tr' ? 'Konuşmacılar' : 'Speakers') },
     { href: `/${lang}/committees`, label: t('nav.committees', lang === 'tr' ? 'Komiteler' : 'Committees') },
     { href: `/${lang}/announcements`, label: t('nav.announcements', lang === 'tr' ? 'Duyurular' : 'Announcements') },
     { href: `/${lang}/contact`, label: t('nav.contact', lang === 'tr' ? 'İletişim' : 'Contact') },

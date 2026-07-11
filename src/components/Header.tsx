@@ -27,12 +27,12 @@ export default function Header({
           <img src="/logo.png" alt={brand} className="h-12 w-auto" />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden xl:flex items-center gap-0.5">
           {items.map((it) => (
             <Link
               key={it.href}
               href={it.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-brand-ink/80 hover:bg-brand-paper hover:text-brand-ink"
+              className="rounded-md px-2 py-2 text-sm font-medium text-brand-ink/80 hover:bg-brand-paper hover:text-brand-ink whitespace-nowrap"
             >
               {it.label}
             </Link>
@@ -49,7 +49,7 @@ export default function Header({
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-brand-ink/15"
+          className="xl:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-brand-ink/15"
           aria-label="Menu"
           aria-expanded={open}
         >
@@ -69,7 +69,7 @@ export default function Header({
       </div>
 
       {open ? (
-        <div className="lg:hidden border-t border-brand-ink/10 bg-white">
+        <div className="xl:hidden border-t border-brand-ink/10 bg-white">
           <div className="container-content py-4 flex flex-col gap-1">
             {items.map((it) => (
               <Link

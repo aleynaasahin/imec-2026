@@ -9,6 +9,7 @@ const nav = [
   { href: '/admin/content', label: 'Metinler' },
   { href: '/admin/hero', label: 'Manşet Slaytları' },
   { href: '/admin/themes', label: 'Temalar' },
+  { href: '/admin/speakers', label: 'Konuşmacılar' },
   { href: '/admin/sponsors', label: 'Sponsorlar' },
   { href: '/admin/announcements', label: 'Duyurular' },
   { href: '/admin/committees', label: 'Komiteler' },

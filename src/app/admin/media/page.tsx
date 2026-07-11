@@ -21,11 +21,6 @@ const ORGANIZER_TAGS: { tag: string; nameTr: string; nameEn: string }[] = [
     nameTr: 'Maden ve Petrol İşleri Genel Müdürlüğü (MAPEG)',
     nameEn: 'MAPEG',
   },
-  {
-    tag: 'organizer_mta',
-    nameTr: 'Maden Tetkik ve Arama Genel Müdürlüğü (MTA)',
-    nameEn: 'MTA',
-  },
 ];
 
 async function saveOrganizerLogo(formData: FormData) {

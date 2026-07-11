@@ -57,7 +57,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       ),
     },
     {
-      kicker: lang === 'tr' ? 'Himaye ve Destek' : 'Auspices and Support',
+      kicker: lang === 'tr' ? 'Himaye' : 'Auspices',
       heading: t(
         'about.partnersHeading',
         lang === 'tr' ? 'Resmî Kurumlar' : 'Official Institutions',
@@ -65,8 +65,8 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       body: t(
         'about.partnersBody',
         lang === 'tr'
-          ? 'Konferans, T.C. Enerji ve Tabii Kaynaklar Bakanlığı ve Maden ve Petrol İşleri Genel Müdürlüğü (MAPEG) himayesinde, Maden Tetkik ve Arama Genel Müdürlüğü (MTA) desteğiyle gerçekleştirilmektedir.'
-          : 'The conference is held under the auspices of the Republic of Türkiye — Ministry of Energy and Natural Resources and the General Directorate of Mining and Petroleum Affairs (MAPEG), with the support of the General Directorate of Mineral Research and Exploration (MTA).',
+          ? 'Konferans, T.C. Enerji ve Tabii Kaynaklar Bakanlığı ve Maden ve Petrol İşleri Genel Müdürlüğü (MAPEG) himayesinde gerçekleştirilmektedir.'
+          : 'The conference is held under the auspices of the Republic of Türkiye — Ministry of Energy and Natural Resources and the General Directorate of Mining and Petroleum Affairs (MAPEG).',
       ),
     },
   ];

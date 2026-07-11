@@ -16,7 +16,9 @@ const TEXTS: TextSeed[] = [
   { key: 'brand.full', group: 'header', label: 'Marka adı', tr: 'IMEC 2026', en: 'IMEC 2026' },
   { key: 'nav.home', group: 'header', label: 'Menü: Anasayfa', tr: 'Anasayfa', en: 'Home' },
   { key: 'nav.about', group: 'header', label: 'Menü: Hakkımızda', tr: 'Hakkımızda', en: 'About' },
-  { key: 'nav.themes', group: 'header', label: 'Menü: Program / Temalar', tr: 'Program / Temalar', en: 'Program / Themes' },
+  { key: 'nav.program', group: 'header', label: 'Menü: Program', tr: 'Program', en: 'Programme' },
+  { key: 'nav.themes', group: 'header', label: 'Menü: Temalar', tr: 'Temalar', en: 'Themes' },
+  { key: 'nav.speakers', group: 'header', label: 'Menü: Konuşmacılar', tr: 'Konuşmacılar', en: 'Speakers' },
   { key: 'nav.committees', group: 'header', label: 'Menü: Komiteler', tr: 'Komiteler', en: 'Committees' },
   { key: 'nav.announcements', group: 'header', label: 'Menü: Duyurular', tr: 'Duyurular', en: 'Announcements' },
   { key: 'nav.contact', group: 'header', label: 'Menü: İletişim', tr: 'İletişim', en: 'Contact' },
@@ -45,7 +47,6 @@ const TEXTS: TextSeed[] = [
   { key: 'home.announcementsAll', group: 'home', label: 'Tüm duyurular linki', tr: 'Tüm duyurular', en: 'All announcements' },
   { key: 'home.organizedBy', group: 'home', label: 'Düzenleyen başlığı', tr: 'Düzenleyen', en: 'Organized by' },
   { key: 'home.underAuspices', group: 'home', label: 'Himayesinde başlığı', tr: 'Himayesinde', en: 'Under the Auspices of' },
-  { key: 'home.withSupport', group: 'home', label: 'Desteğiyle başlığı', tr: 'Desteğiyle', en: 'With the Support of' },
 
   // Sponsors
   { key: 'sponsors.heading', group: 'sponsors', label: 'Sponsorlar başlığı', tr: 'Sponsorlarımız', en: 'Our Sponsors' },
@@ -68,13 +69,27 @@ const TEXTS: TextSeed[] = [
     en: 'The Professional Development Association of Mining and Geoscience Professionals (MAYEM) was founded to support the professional development of mining and geoscience experts, strengthen inter-sectoral knowledge sharing and organise public-interest events.' },
   { key: 'about.partnersHeading', group: 'about', label: 'Resmi kurumlar başlığı', tr: 'Resmî Kurumlar', en: 'Official Institutions' },
   { key: 'about.partnersBody', group: 'about', label: 'Resmi kurumlar metni', multiline: true,
-    tr: 'Konferans, T.C. Enerji ve Tabii Kaynaklar Bakanlığı ve Maden ve Petrol İşleri Genel Müdürlüğü (MAPEG) himayesinde, Maden Tetkik ve Arama Genel Müdürlüğü (MTA) desteğiyle gerçekleştirilmektedir.',
-    en: 'The conference is held under the auspices of the Republic of Türkiye — Ministry of Energy and Natural Resources and the General Directorate of Mining and Petroleum Affairs (MAPEG), with the support of the General Directorate of Mineral Research and Exploration (MTA).' },
+    tr: 'Konferans, T.C. Enerji ve Tabii Kaynaklar Bakanlığı ve Maden ve Petrol İşleri Genel Müdürlüğü (MAPEG) himayesinde gerçekleştirilmektedir.',
+    en: 'The conference is held under the auspices of the Republic of Türkiye — Ministry of Energy and Natural Resources and the General Directorate of Mining and Petroleum Affairs (MAPEG).' },
+
+  // Program
+  { key: 'program.kicker', group: 'program', label: 'Program kicker', tr: 'Program', en: 'Programme' },
+  { key: 'program.title', group: 'program', label: 'Program başlık', tr: 'Konferans Programı', en: 'Conference Programme' },
+  { key: 'program.subtitle', group: 'program', label: 'Program alt başlık', tr: 'Oturumlar, saatler ve salon bilgileri yakında bu sayfada yayınlanacaktır.', en: 'Sessions, timings and room details will be published on this page soon.' },
+  { key: 'program.body', group: 'program', label: 'Program metni', multiline: true, tr: '', en: '' },
+  { key: 'program.empty', group: 'program', label: 'Program boş mesajı', tr: 'Detaylı program yakında yayınlanacaktır.', en: 'The detailed programme will be published soon.' },
 
   // Themes
   { key: 'themes.kicker', group: 'themes', label: 'Temalar kicker', tr: 'Program', en: 'Programme' },
   { key: 'themes.title', group: 'themes', label: 'Temalar başlık', tr: 'Ana Temalar', en: 'Main Themes' },
   { key: 'themes.subtitle', group: 'themes', label: 'Temalar alt başlık', tr: 'Aramadan üretime, finansmandan toplumsal kabule sekiz başlık altında konferansın gündemi.', en: 'The eight pillars of the conference agenda — from exploration to production and from financing to social license.' },
+
+  // Speakers
+  { key: 'speakers.kicker', group: 'speakers', label: 'Konuşmacılar kicker', tr: 'Konuşmacılar', en: 'Speakers' },
+  { key: 'speakers.title', group: 'speakers', label: 'Konuşmacılar başlık', tr: 'Konuşmacılar', en: 'Speakers' },
+  { key: 'speakers.subtitle', group: 'speakers', label: 'Konuşmacılar alt başlık', tr: 'IMEC 2026 kapsamında sahne alacak yurt içi ve yurt dışından uzman konuşmacılar.', en: 'Expert speakers from Türkiye and abroad taking part in IMEC 2026.' },
+  { key: 'speakers.empty', group: 'speakers', label: 'Konuşmacılar boş mesajı', tr: 'Konuşmacı listesi yakında yayınlanacaktır.', en: 'The speaker list will be published soon.' },
+  { key: 'speakers.topicLabel', group: 'speakers', label: 'Konu etiketi', tr: 'Konu', en: 'Topic' },
 
   // Committees
   { key: 'committees.kicker', group: 'committees', label: 'Komiteler kicker', tr: 'Ekip', en: 'Team' },
@@ -184,6 +199,69 @@ const THEMES = [
   },
 ];
 
+// Keys whose default content must be corrected even if a row already exists
+// with the old (already-seeded) value — e.g. removing a stale MTA mention.
+const TEXT_OVERRIDES: { key: string; tr: string; en: string }[] = [
+  {
+    key: 'about.partnersBody',
+    tr: 'Konferans, T.C. Enerji ve Tabii Kaynaklar Bakanlığı ve Maden ve Petrol İşleri Genel Müdürlüğü (MAPEG) himayesinde gerçekleştirilmektedir.',
+    en: 'The conference is held under the auspices of the Republic of Türkiye — Ministry of Energy and Natural Resources and the General Directorate of Mining and Petroleum Affairs (MAPEG).',
+  },
+  { key: 'nav.themes', tr: 'Temalar', en: 'Themes' },
+];
+
+// Keys that no longer exist in the site (superseded by nav.program / nav.themes / nav.speakers)
+const TEXT_KEYS_TO_REMOVE = ['home.withSupport'];
+
+const SPEAKER_GROUPS: {
+  nameTr: string;
+  nameEn: string;
+  order: number;
+  speakers: {
+    fullName: string;
+    titleTr: string;
+    organization: string;
+    topicTr: string;
+    bioTr: string;
+    order: number;
+  }[];
+}[] = [
+  {
+    nameTr: 'Yurt Dışından Konuşmacılar',
+    nameEn: 'International Speakers',
+    order: 1,
+    speakers: [
+      { fullName: 'Dr. Hakan Kahraman', titleTr: 'Türkiye Müdürü', organization: 'DMT GRUP', topicTr: '', bioTr: "Dr. Hakan Arden Kahraman, maden ve endüstriyel projelerin teknik due diligence (TDD), yatırımcı raporlaması ve kredi veren kuruluşlar için bağımsız mühendislik hizmetleri konularında uzmanlaşmıştır. Bu kapsamda özellikle uluslararası finans kuruluşları ve yatırımcılar için maden projelerinin fizibilite, risk ve teknik uygunluk değerlendirmelerinde görev almaktadır. Profesyonel kariyerinde DMT Group Türkiye bünyesinde Teknik Müdür olarak görev yapmakta, burada maden ve altyapı projelerine yönelik bağımsız mühendislik, proje değerlendirme ve yatırım doğrulama süreçlerinde çalışmaktadır. İTÜ Jeoloji Mühendisliği bölümü mezunudur.", order: 1 },
+      { fullName: 'Sodhie Naicker', titleTr: 'Genel Müdür', organization: 'DMT-S Africa', topicTr: '', bioTr: "Sodhiesiven (Sodhie) B. Naicker, Afrika ve uluslararası pazarlarda maden değer zincirinin tamamında 30 yılı aşkın deneyime sahip bir yer bilimci ve üst düzey madencilik yöneticisidir. DMT Kai Batla'nın kurucu ortağı ve genel müdürüdür. Arama, madencilik operasyonları, proje değerlendirme ve teknik inceleme, maden ekonomisi ve politika geliştirme alanlarında teknik ve stratejik danışmanlık sağlamasıyla tanınmaktadır. Mintek'teki üst düzey görevi sırasında maden ekonomisi ve strateji çalışmalarına liderlik etmiş, ulusal ve emtia bazlı planlamaya katkı sağlamış ve kamu-sanayi iş birliğini güçlendirmiştir. Daha sonra DMT Kai Batla'yı jeolojik danışmanlık şirketinden, Sahra Altı Afrika genelinde faaliyet gösteren çok disiplinli bir danışmanlık kuruluşuna dönüştürmüştür. Aynı zamanda DMT Birleşik Krallık'ta bağımsız yönetim kurulu üyesi ve AusIMM Güney Afrika Uluslararası Temsilcisi olarak görev yapmaktadır.", order: 2 },
+      { fullName: 'Kai Hoffman', titleTr: 'Sahip ve CEO', organization: 'Soar Financial Group', topicTr: '', bioTr: "Kai Hoffman, 2008 yılından bu yana junior madencilik sektöründe faaliyet göstermekte ve sektörün olumlu ve olumsuz tüm yönlerini deneyimlemiştir. Yayıncılık, kurumsal iletişim, önde gelen yatırım konferanslarının organizasyonu, finansal danışmanlık ve veri analizi alanlarında faaliyet gösteren Soar Financial Group'un sahibi ve CEO'sudur. Ayrıca Labrador Gold Corp. (TSX-V: LAB) şirketinde bağımsız yönetim kurulu üyesi olarak görev yapmaktadır.", order: 3 },
+      { fullName: 'Christian Masurenko', titleTr: 'Avrupa Jeologlar Federasyonu Başkan Yardımcısı', organization: 'ECTerra', topicTr: '', bioTr: "Christian Masurenko, Avrupa Jeoloğu (EurGeol) unvanına sahip olup arama, madencilik, ESG ve sorumlu kaynak yönetimi alanlarında 25 yılı aşkın uluslararası deneyime sahip kıdemli jeolog ve madencilik yöneticisidir. Afrika, Avrupa ve Güney Amerika'da milyarlarca ABD doları değerindeki madencilik ve altyapı projelerinde CEO, proje yöneticisi ve stratejik danışman olarak görev almıştır. Uzmanlık alanları kritik hammaddeler, fizibilite çalışmaları, çevresel ve sosyal yönetişim, toplum ilişkileri ve sürdürülebilir tedarik zincirleridir. JORC, NI 43-101 ve PERC standartlarına göre Yetkin Kişi olarak görev yapma yeterliliğine sahiptir.", order: 4 },
+      { fullName: 'Stephan Pueschel', titleTr: 'Metaller ve Madencilik Eş Başkanı', organization: 'KfW IPEX-Bank', topicTr: '', bioTr: "Stephan Pueschel, KfW IPEX-Bank'ta Metaller ve Madencilik Ekibi Eş Başkanı olarak görev yapmakta olup madencilikten işleme, metal üretimi ve geri dönüşüme kadar tüm değer zincirinin finansmanına odaklanmaktadır. KfW Grubu bünyesinde 20 yılı aşkın süredir farklı departmanlarda görev almış ve uluslararası proje finansmanı ile varlık temelli finansman alanlarında geniş deneyim kazanmıştır.", order: 5 },
+      { fullName: 'John Pereira', titleTr: 'Arama Müdürü', organization: 'Savannah Resources', topicTr: '', bioTr: "Madencilik ve metaller sektöründe arama projeleri ve ülke yönetimi alanlarında 25 yıllık deneyime sahip kıdemli jeologdur. Birçok halka açık şirkette arama ve madencilik projelerinde görev almıştır. Maden aramacılığı, yer bilimleri, madencilik, mühendislik jeolojisi, mineraller, proje değerlendirme ve teknik inceleme (due diligence) konularında uzmanlaşmıştır.", order: 6 },
+      { fullName: 'Maria Alejandra Delgado', titleTr: 'Hukuk, Dış İlişkiler ve Sürdürülebilirlik Uzmanı', organization: 'Bağımsız Danışman', topicTr: '', bioTr: "Lima, Londra, Florida ve Latin Amerika ülkelerinde kapsamlı ulusal ve uluslararası deneyime sahip bir madencilik yöneticisidir. Hukukçu olup genel yönetim ve proje yönetimi, hukuk ve uyum danışmanlığı, iletişim, kurumsal yönetişim, dış ilişkiler ve halkla ilişkiler, kapsayıcılık ve çeşitlilik, kurumsal işler ve sürdürülebilirlik alanlarında uzmanlaşmıştır.", order: 7 },
+    ],
+  },
+  {
+    nameTr: "Türkiye'den Uzmanlar",
+    nameEn: 'Experts from Türkiye',
+    order: 2,
+    speakers: [
+      { fullName: 'Dr. Yusuf Ziya Özkan', titleTr: 'Jeoloji Mühendisi', organization: 'DAMA MÜHENDİSLİK', topicTr: 'Maden arama maliyet analizi - Aramanın Ekonomisi', bioTr: "Dr. Yusuf Ziya Özkan, ekonomik jeoloji ve maden arama alanlarında uzmanlaşmış bir jeoloji mühendisidir. Maden arama projelerinin tasarımı, maden kaynak ve rezerv tahmini, jeoistatistik, sondaj optimizasyonu ve maden potansiyeli değerlendirmesi konularında uzun yıllara dayanan deneyime sahiptir. Maden kaynak ve rezerv tahmini konusunda Türkiye'deki öncü isimler arasında gösterilmektedir.", order: 1 },
+      { fullName: 'Prof. Dr. İlkay Kuşcu', titleTr: 'Jeoloji Mühendisi', organization: '', topicTr: "Türkiye'de derinlerdeki cevher yataklarının araştırılması için mineral sistem yaklaşımı: Bir paradigma değişikliğine ihtiyaç var.", bioTr: "Prof. Dr. İlkay Kuşcu, maden yatakları ve ekonomik jeoloji alanlarında uzmanlaşmış bir jeoloji mühendisidir. Uzun yıllar Muğla Sıtkı Koçman Üniversitesi Jeoloji Mühendisliği Bölümü Maden Yatakları Anabilim Dalı'nda öğretim üyeliği yapmış, fakülte dekanlığı görevini yürütmüştür. Araştırmaları; porfiri bakır yatakları, maden arama jeolojisi, hidrotermal alterasyon ve Türkiye metalojenisi üzerine yoğunlaşmaktadır.", order: 2 },
+      { fullName: 'Doç. Dr. Okay Çimen', titleTr: 'Jeoloji Mühendisi', organization: 'MUNZUR ÜNİVERSİTESİ', topicTr: 'Kritik Hammaddeler - Jeolojik keşifler, tedarik zinciri hassasiyetleri ve yeşil enerji için gerekli mineraller (lityum, kobalt, NTE, bakır)', bioTr: "Ankara Üniversitesi Jeoloji Mühendisliği Bölümü'nde lisans ve yüksek lisansını, ODTÜ Jeoloji Mühendisliği Anabilim Dalı'nda 2016 yılında doktorasını tamamlamıştır. Nadir Toprak Elementleri'nin (NTE) jeolojik oluşum ortamları üzerine çalışmalar yürütmektedir. 2019-2023 yılları arasında Munzur Üniversitesi Nadir Toprak Elementleri Uygulama ve Araştırma Merkezi (MUNTEAM) kurucu müdürlüğü görevini üstlenmiştir.", order: 3 },
+      { fullName: 'Dr. İbrahim Kürşat Tuna', titleTr: 'Uluslararası İlişkiler Uzmanı', organization: 'SÜTUN ENERJİ', topicTr: 'Uluslararası İlişkiler Bağlamında Kritik Madenlerin Jeopolitiği ve Maden Aramacılığına Etkileri', bioTr: 'Ankara Üniversitesi Siyasal Bilgiler Fakültesi Uluslararası İlişkiler Bölümü mezunudur. Kritik madenlerin ulusal ve uluslararası güvenliğe etkileri üzerine çalışmalar yapmış, 2024 yılında doktor unvanı almıştır. Halihazırda TOBB Madencilik Sektör Meclisi üyesidir.', order: 4 },
+      { fullName: 'Mert Köksal', titleTr: 'Jeofizik Mühendisi', organization: 'Matrix GT', topicTr: 'Maden Aramacılığında Jeofiziğin Rolü ve Yeni Nesil Teknolojiler', bioTr: "18 yılı aşkın süredir metalik maden aramacılığı alanında faaliyet göstermektedir. Kariyeri boyunca Türkiye, Kuzey Amerika, Balkanlar, Asya ve Afrika'da çok sayıda arama projesinde görev almış; saha operasyonları, jeofizik çalışmalar ve proje yönetimi konularında sorumluluk üstlenmiştir.", order: 5 },
+      { fullName: 'Abdullah Buhur', titleTr: 'Laboratuvarlar Müdürü', organization: 'ARGETEST', topicTr: 'Maden Döngüsü İçinde Laboratuvarların Rolü ve Entegre Kalite Kontrol Uygulamaları', bioTr: "Abdullah Buhur, 2012 yılında ARGETEST'in kurucu ortakları arasında yer almış olup, madencilik sektörüne yönelik analiz ve laboratuvar hizmetleri alanında uzun yıllara dayanan deneyime sahiptir. Türkiye'de ve yurt dışında kurduğu laboratuvarların yönetimini sürdürmektedir.", order: 6 },
+      { fullName: 'Dr. Melik Zafer Yıldız', titleTr: 'Endüstri Sosyoloğu', organization: 'ÇAYELİ BAKIR A.Ş.', topicTr: 'Maden Arama döneminde sosyal rızanın ve sosyal kabulün inşası ve dinamikleri', bioTr: "Yıldız, madencilik, enerji ve inşaat sektörlerinde sosyolog olarak 25 yılı aşkın sosyal, endüstriyel ve organizasyonel uygulama, geliştirme ve yönetim tecrübesine sahiptir. T.C. Başbakanlık GAP İdaresi, Flokser Holding, Tepe İnşaat ve Çayeli Bakır İşletmeleri'nde yönetici görevlerde bulunmuştur.", order: 7 },
+      { fullName: 'Dr. Özgür Dirim Özkan', titleTr: 'Sosyolog', organization: 'VADAR DANIŞMANLIK', topicTr: 'İlk Karşılaşma, İlk İzlenim, İlk Risk: Maden Arama Aşamasında Sosyal Kabulün Önemi', bioTr: 'Özkan, sosyal antropoloji alanında uzmanlaşmış bir araştırmacı ve danışmandır. Enerji, madencilik, altyapı ve sosyal kalkınma projelerinde saha araştırması, sosyal etki analizi, paydaş katılımı ve topluluk ilişkileri çalışmalarında görev almıştır.', order: 8 },
+      { fullName: 'Sezai Aydın', titleTr: 'Maden Mühendisi', organization: '', topicTr: 'Arama etkinliklerinin kamuya ve özel sektöre ilişkin hukuksal niteliği - Kamu Faaliyeti mi? Ticari Faaliyet mi?', bioTr: 'Meslek hayatına ETİKROM A.Ş.\'de başlamış, MTA Genel Müdürlüğünde cevher hazırlama biriminde ve Maden İşleri Genel Müdürlüğünde mühendis, şube müdürü ve daire başkanı olarak görev yapmıştır. UMREK yetkin kişisidir.', order: 9 },
+      { fullName: 'Şahin Özdemir', titleTr: 'Maden Mühendisi', organization: 'MİTTO', topicTr: 'Maden Arama Faaliyetlerinin Çevreye Etkisi / Sosyal İletişim', bioTr: '', order: 10 },
+      { fullName: 'Dr. Uğur Dağ & Halim Özatay', titleTr: 'Arkeolog', organization: 'REGIO', topicTr: 'Maden Aramalarında Kültürel Mirasın Yönetilmesine Yönelik Yasal Süreçler ve Uygulamada Karşılaşılan Eksiklikler', bioTr: "Dr. Haydar Uğur Dağ, Hacettepe Üniversitesi Arkeoloji Anabilim Dalı mezunudur ve arkeolojik miras etki değerlendirme çalışmaları üzerine doktorasını tamamlamıştır. Halim Özatay, REGİO bünyesinde 25 yılı aşkın süredir arkeolojik yüzey araştırmaları ve kültürel miras yönetimi alanında uzman olarak çalışmaktadır. İkisi de REGİO Kültürel Miras Yönetim Danışmanlık'ın kurucularındandır.", order: 11 },
+      { fullName: 'Bişar Sercan Değirmenci', titleTr: 'Avukat', organization: 'DİMİN', topicTr: 'Arama Döneminde İzin Süreçleri ve Uyuşmazlıklar', bioTr: "Hukuk ve Uluslararası İlişkiler lisans mezunudur. Madencilik sektöründe faaliyet gösteren bir şirketler grubunda yaklaşık on iki yıldan beri Hukuk Müşavirliği görevini yürütmektedir. World Association of Mining Lawyers katılımcısıdır.", order: 12 },
+      { fullName: 'Cem Boz', titleTr: 'Avukat, LL.M.', organization: 'BOZ&BOZ LEGAL', topicTr: '', bioTr: "Cem Boz, Maden ve Doğal Kaynaklar Hukuku, Uluslararası Ticaret Hukuku alanlarında 18 yılı aşkın uluslararası deneyime sahip hukukçu ve akademisyendir. İstanbul Teknik Üniversitesi Maden Fakültesi eski öğretim görevlisidir. GEMAD Yönetim Kurulu üyesidir.", order: 13 },
+    ],
+  },
+];
+
 const COMMITTEES = [
   {
     nameTr: 'Koordinasyon',
@@ -273,6 +351,12 @@ async function seed() {
     }
   }
 
+  console.log('Applying content overrides…');
+  for (const o of TEXT_OVERRIDES) {
+    await prisma.text.updateMany({ where: { key: o.key }, data: { tr: o.tr, en: o.en } });
+  }
+  await prisma.text.deleteMany({ where: { key: { in: TEXT_KEYS_TO_REMOVE } } });
+
   console.log('Seeding themes…');
   for (let i = 0; i < THEMES.length; i++) {
     const th = THEMES[i];
@@ -299,6 +383,26 @@ async function seed() {
       if (!exists) {
         await prisma.committeeMember.create({
           data: { ...m, groupId: grp.id },
+        });
+      }
+    }
+  }
+
+  console.log('Seeding speakers…');
+  for (const g of SPEAKER_GROUPS) {
+    let grp = await prisma.speakerGroup.findFirst({ where: { nameTr: g.nameTr } });
+    if (!grp) {
+      grp = await prisma.speakerGroup.create({
+        data: { nameTr: g.nameTr, nameEn: g.nameEn, order: g.order },
+      });
+    }
+    for (const s of g.speakers) {
+      const exists = await prisma.speaker.findFirst({
+        where: { groupId: grp.id, fullName: s.fullName },
+      });
+      if (!exists) {
+        await prisma.speaker.create({
+          data: { ...s, groupId: grp.id, published: true },
         });
       }
     }

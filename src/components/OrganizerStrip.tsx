@@ -5,13 +5,11 @@ export default function OrganizerStrip({
   organizers,
   organizedBy,
   underAuspices,
-  withSupport,
 }: {
   lang: Lang;
   organizers: { tag: string; url: string; name: string }[];
   organizedBy: string;
   underAuspices: string;
-  withSupport: string;
 }) {
   const map: Record<string, string> = {};
   for (const o of organizers) map[o.tag] = o.url;
@@ -19,7 +17,6 @@ export default function OrganizerStrip({
   const groups: { title: string; tags: string[] }[] = [
     { title: organizedBy, tags: ['organizer_mayem'] },
     { title: underAuspices, tags: ['organizer_ministry', 'organizer_mapeg'] },
-    { title: withSupport, tags: ['organizer_mta'] },
   ];
 
   const labels: Record<string, { tr: string; en: string }> = {
@@ -34,10 +31,6 @@ export default function OrganizerStrip({
     organizer_mapeg: {
       tr: 'Maden ve Petrol İşleri Genel Müdürlüğü (MAPEG)',
       en: 'General Directorate of Mining and Petroleum Affairs (MAPEG)',
-    },
-    organizer_mta: {
-      tr: 'Maden Tetkik ve Arama Genel Müdürlüğü (MTA)',
-      en: 'General Directorate of Mineral Research and Exploration (MTA)',
     },
   };
 
