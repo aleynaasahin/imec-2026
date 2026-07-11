@@ -392,6 +392,30 @@ const SPEAKER_TRANSLATIONS: {
   },
 ];
 
+const SPONSOR_TIERS: {
+  nameTr: string;
+  nameEn: string;
+  order: number;
+  sponsors: { name: string; order: number }[];
+}[] = [
+  {
+    nameTr: 'Destekçiler',
+    nameEn: 'Supporters',
+    order: 1,
+    sponsors: [
+      { name: 'İMİB', order: 1 },
+      { name: 'GEMAD', order: 2 },
+      { name: 'DMKTMK', order: 3 },
+    ],
+  },
+  {
+    nameTr: 'Sektör Medya Destekçisi',
+    nameEn: 'Sector Media Partner',
+    order: 2,
+    sponsors: [{ name: 'Madencilik ve Sonrası', order: 1 }],
+  },
+];
+
 const COMMITTEES = [
   {
     nameTr: 'Koordinasyon',
@@ -544,6 +568,22 @@ async function seed() {
       where: { fullName: tr.fullName },
       data: { titleEn: tr.titleEn, topicEn: tr.topicEn, bioEn: tr.bioEn },
     });
+  }
+
+  console.log('Seeding sponsor tiers…');
+  for (const tier of SPONSOR_TIERS) {
+    let t2 = await prisma.sponsorTier.findFirst({ where: { nameTr: tier.nameTr } });
+    if (!t2) {
+      t2 = await prisma.sponsorTier.create({
+        data: { nameTr: tier.nameTr, nameEn: tier.nameEn, order: tier.order },
+      });
+    }
+    for (const s of tier.sponsors) {
+      const exists = await prisma.sponsor.findFirst({ where: { tierId: t2.id, name: s.name } });
+      if (!exists) {
+        await prisma.sponsor.create({ data: { tierId: t2.id, name: s.name, order: s.order } });
+      }
+    }
   }
 
   console.log('Seeding form fields…');
