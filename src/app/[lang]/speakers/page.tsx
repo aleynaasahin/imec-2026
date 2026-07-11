@@ -37,7 +37,7 @@ export default async function SpeakersPage({ params }: { params: Promise<{ lang:
         {nonEmpty.map((g) => (
           <section key={g.id}>
             <h2 className="h-display text-2xl text-brand-ink mb-6">{pick(g.nameTr, g.nameEn, lang)}</h2>
-            <div className="grid gap-5 md:grid-cols-2 items-start">
+            <div className="grid gap-5 max-w-3xl">
               {g.speakers.map((s) => {
                 const title = pick(s.titleTr, s.titleEn, lang);
                 const topic = pick(s.topicTr, s.topicEn, lang);
