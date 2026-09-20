@@ -55,7 +55,7 @@ function Field({
 }: {
   htmlFor: string;
   label: string;
-  hint?: string;
+  hint?: React.ReactNode;
   required?: boolean;
   children: React.ReactNode;
 }) {
@@ -145,7 +145,19 @@ export default function SpeakerSurveyForm({
             ? 'Katılım (kayıt) linkinden kaydınızı tamamladınız mı?'
             : 'Have you completed your registration via the participation link?'
         }
-        hint={tr ? 'Zaten kayıtlıysanız "Evet" seçiniz.' : 'If you have already registered, select "Yes".'}
+        hint={
+          <>
+            {tr ? 'Zaten kayıtlıysanız "Evet" seçiniz. Kayıt linki: ' : 'If you have already registered, select "Yes". Registration link: '}
+            <a
+              href={`/${lang}/register`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-brand-green underline hover:text-brand-green-dark"
+            >
+              mineralexplorationconference.com/{lang}/register
+            </a>
+          </>
+        }
         required
       >
         <Select name="registered" lang={lang} options={YES_NO} required />
@@ -179,13 +191,6 @@ export default function SpeakerSurveyForm({
         }
       >
         <Select name="joinWhatsapp" lang={lang} options={YES_NO} />
-      </Field>
-      <Field
-        htmlFor="f_whatsappPhone"
-        label={tr ? 'Onaylıyorsanız WhatsApp için telefon numaranız' : 'If you agree, your phone number for WhatsApp'}
-        hint={tr ? 'Ülke koduyla birlikte yazınız, örn. +90 5xx xxx xx xx' : 'Include country code, e.g. +90 5xx xxx xx xx'}
-      >
-        <input id="f_whatsappPhone" name="whatsappPhone" type="tel" className="input" />
       </Field>
 
       <Field
