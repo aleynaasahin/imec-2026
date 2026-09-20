@@ -18,7 +18,14 @@
       "PowerShell($env:Path = \"$env:ProgramFiles\\\\nodejs;\" + $env:Path; cd \"C:\\\\Users\\\\hasso\\\\OneDrive\\\\Desktop\\\\IMEC Site\"; npx tsx prisma/clean-test.ts; Remove-Item prisma/clean-test.ts -Force; Remove-Item dev.log -Force -ErrorAction SilentlyContinue; \"OK\")",
       "PowerShell(Start-Sleep -Seconds 8; $pages = @\\('/tr','/en','/tr/about','/tr/themes','/tr/committees','/tr/announcements','/tr/contact','/tr/register','/admin/login'\\); foreach\\($p in $pages\\){ try { $r = Invoke-WebRequest -UseBasicParsing -Uri \\(\"http://localhost:3199\" + $p\\) -TimeoutSec 30; \"{0,4} {1}\" -f $r.StatusCode, $p } catch { \"FAIL \" + $p + \" - \" + $_.Exception.Message } })",
       "PowerShell($conn = Get-NetTCPConnection -LocalPort 3199 -State Listen -ErrorAction SilentlyContinue; if\\($conn\\){ Stop-Process -Id $conn.OwningProcess -Force; \"stopped \" + $conn.OwningProcess } else { \"no listener\" }; Remove-Item \"C:\\\\Users\\\\hasso\\\\OneDrive\\\\Desktop\\\\IMEC Site\\\\dev.log\" -Force -ErrorAction SilentlyContinue; \"cleaned\")",
-      "PowerShell($env:Path = \"$env:ProgramFiles\\\\nodejs;\" + $env:Path; cd \"C:\\\\Users\\\\hasso\\\\OneDrive\\\\Desktop\\\\IMEC Site\"; npm install @vercel/blob 2>&1 | Select-Object -Last 5)"
+      "PowerShell($env:Path = \"$env:ProgramFiles\\\\nodejs;\" + $env:Path; cd \"C:\\\\Users\\\\hasso\\\\OneDrive\\\\Desktop\\\\IMEC Site\"; npm install @vercel/blob 2>&1 | Select-Object -Last 5)",
+      "PowerShell($env:Path = \"$env:ProgramFiles\\\\nodejs;\" + $env:Path; node -e \"console.log\\('AUTH_SECRET=' + require\\('crypto'\\).randomBytes\\(48\\).toString\\('hex'\\)\\)\")",
+      "PowerShell($env:Path = \"$env:ProgramFiles\\\\nodejs;\" + $env:Path; cd \"C:\\\\Users\\\\hasso\\\\OneDrive\\\\Desktop\\\\IMEC Site\"; npx tsc --noEmit 2>&1 | Select-Object -First 20; if \\($LASTEXITCODE -eq 0\\) { \"TYPECHECK OK\" } else { \"TYPECHECK FAILED\" })",
+      "PowerShell($env:Path = \"$env:ProgramFiles\\\\nodejs;\" + $env:Path; cd \"C:\\\\Users\\\\hasso\\\\OneDrive\\\\Desktop\\\\IMEC Site\"; git add src/components/TopLogosStrip.tsx \"src/app/[lang]/page.tsx\" src/app/admin/settings/page.tsx 2>&1; git -c user.email=imec@local -c user.name=\"IMEC Setup\" commit -m \"Add toggleable top logos strip \\(Ministry, MAPEG, MAYEM\\) above countdown\" 2>&1 | Select-Object -Last 3)",
+      "PowerShell($env:Path = \"$env:ProgramFiles\\\\nodejs;\" + $env:Path; cd \"C:\\\\Users\\\\hasso\\\\OneDrive\\\\Desktop\\\\IMEC Site\"; git push origin main 2>&1 | Select-Object -Last 5)",
+      "Bash(powershell -Command \"Get-ChildItem 'C:\\\\Users\\\\hasso\\\\OneDrive\\\\Desktop\\\\' -Filter '*Konuşmacılar*'\")",
+      "PowerShell($env:Path = \"$env:ProgramFiles\\\\nodejs;\" + $env:Path; cd \"C:\\\\Users\\\\hasso\\\\OneDrive\\\\Desktop\\\\IMEC Site\"; npx tsx prisma/read-xlsx.ts 2>&1 | Select-Object -First 100)",
+      "PowerShell($env:Path = \"$env:ProgramFiles\\\\nodejs;\" + $env:Path; cd \"C:\\\\Users\\\\hasso\\\\OneDrive\\\\Desktop\\\\IMEC Site\"; npx tsc --noEmit; if \\($LASTEXITCODE -eq 0\\) { \"OK\" } else { \"FAILED\" })"
     ]
   }
 }

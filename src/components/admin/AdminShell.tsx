@@ -15,6 +15,7 @@ const nav = [
   { href: '/admin/committees', label: 'Komiteler' },
   { href: '/admin/form-fields', label: 'Kayıt Formu' },
   { href: '/admin/registrations', label: 'Kayıtlar' },
+  { href: '/admin/speaker-survey', label: 'Konuşmacı Anketi' },
   { href: '/admin/media', label: 'Medya / Logolar' },
   { href: '/admin/settings', label: 'Ayarlar' },
 ];

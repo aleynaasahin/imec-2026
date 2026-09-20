@@ -151,6 +151,28 @@ model Setting {
   value String @default("")
 }
 
+// Speaker survey responses (link-only questionnaire sent to speakers by email)
+model SpeakerSurveyResponse {
+  id               Int      @id @default(autoincrement())
+  fullName         String   @default("")
+  email            String   @default("")
+  organization     String   @default("")
+  registered       String   @default("") // yes | no
+  followsLinkedin  String   @default("") // yes | no
+  recommendOthers  String   @default("") // yes | no | maybe
+  joinWhatsapp     String   @default("") // yes | no
+  whatsappPhone    String   @default("")
+  infoCorrection   String   @default("") // free text
+  mediaConsent     String   @default("") // yes | no
+  photoUrl         String   @default("")
+  paperSubmission  String   @default("") // yes | no | undecided
+  youtubeConsent   String   @default("") // yes | no
+  journalConsent   String   @default("") // yes | no
+  travelNeeded     String   @default("") // yes | no
+  travelDetails    String   @default("") // free text
+  createdAt        DateTime @default(now())
+}
+
 // Uploaded media (so admin can pick reused logos for organizers etc.)
 model Media {
   id        Int      @id @default(autoincrement())
