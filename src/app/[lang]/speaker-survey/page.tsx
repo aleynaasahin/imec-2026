@@ -4,6 +4,7 @@ import { isLang } from '@/lib/i18n';
 import { loadShell } from '@/lib/site';
 import PageHeader from '@/components/PageHeader';
 import SpeakerSurveyForm from '@/components/SpeakerSurveyForm';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export const dynamic = 'force-dynamic';
 
@@ -51,20 +52,28 @@ export default async function SpeakerSurveyPage({ params }: { params: Promise<{ 
             </p>
           </div>
         </aside>
-        <div className="card">
-          <SpeakerSurveyForm
-            lang={lang}
-            labels={{
-              submit: tr ? 'Yanıtları Gönder' : 'Submit Answers',
-              submitting: tr ? 'Gönderiliyor…' : 'Submitting…',
-              success: tr
-                ? 'Yanıtlarınız alınmıştır. Katkılarınız için teşekkür ederiz!'
-                : 'Your answers have been received. Thank you for your contribution!',
-              errorGeneric: tr
-                ? 'Bir sorun oluştu. Lütfen zorunlu alanları kontrol edip tekrar deneyin.'
-                : 'Something went wrong. Please check the required fields and try again.',
-            }}
-          />
+        <div className="space-y-4">
+          <div className="flex items-center justify-end gap-2">
+            <span className="text-xs font-medium text-brand-ink/60">
+              {tr ? 'Dil / Language:' : 'Language / Dil:'}
+            </span>
+            <LanguageSwitcher current={lang} />
+          </div>
+          <div className="card">
+            <SpeakerSurveyForm
+              lang={lang}
+              labels={{
+                submit: tr ? 'Yanıtları Gönder' : 'Submit Answers',
+                submitting: tr ? 'Gönderiliyor…' : 'Submitting…',
+                success: tr
+                  ? 'Yanıtlarınız alınmıştır. Katkılarınız için teşekkür ederiz!'
+                  : 'Your answers have been received. Thank you for your contribution!',
+                errorGeneric: tr
+                  ? 'Bir sorun oluştu. Lütfen zorunlu alanları kontrol edip tekrar deneyin.'
+                  : 'Something went wrong. Please check the required fields and try again.',
+              }}
+            />
+          </div>
         </div>
       </div>
     </>
