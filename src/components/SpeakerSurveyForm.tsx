@@ -166,6 +166,19 @@ export default function SpeakerSurveyForm({
       <Field
         htmlFor="f_followsLinkedin"
         label={tr ? 'IMEC 2026 LinkedIn sayfasını takip ediyor musunuz?' : 'Do you follow the IMEC 2026 LinkedIn page?'}
+        hint={
+          <>
+            {tr ? 'LinkedIn sayfası: ' : 'LinkedIn page: '}
+            <a
+              href="https://www.linkedin.com/company/mineralexplorationconferance"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-brand-green underline hover:text-brand-green-dark"
+            >
+              linkedin.com/company/mineralexplorationconferance
+            </a>
+          </>
+        }
         required
       >
         <Select name="followsLinkedin" lang={lang} options={YES_NO} required />
