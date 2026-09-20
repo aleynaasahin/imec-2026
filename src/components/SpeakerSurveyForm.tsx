@@ -210,10 +210,25 @@ export default function SpeakerSurveyForm({
         htmlFor="f_infoCorrection"
         label={
           tr
-            ? 'Bilgilerinizde (unvan, kurum, konuşma başlığı, özgeçmiş) bir düzeltme/güncelleme var mı?'
-            : 'Any corrections/updates needed to your details (title, organization, talk title, bio)?'
+            ? 'IMEC 2026 web sitesindeki Konuşmacılar sayfasında yer alan bilgilerinizde (unvan, kurum, konuşma başlığı, özgeçmiş) bir düzeltme/güncelleme var mı?'
+            : 'Any corrections/updates needed to your details on the IMEC 2026 Speakers page (title, organization, talk title, bio)?'
         }
-        hint={tr ? 'Varsa lütfen aşağıya yazınız.' : 'Please describe below, if any.'}
+        hint={
+          <>
+            {tr
+              ? 'Güncel bilgilerinizi kontrol etmek için: '
+              : 'Check your current listing here: '}
+            <a
+              href={`/${lang}/speakers`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-brand-green underline hover:text-brand-green-dark"
+            >
+              mineralexplorationconference.com/{lang}/speakers
+            </a>
+            {tr ? '. Varsa düzeltmeyi aşağıya yazınız.' : '. Please describe any correction below, if any.'}
+          </>
+        }
       >
         <textarea id="f_infoCorrection" name="infoCorrection" className="input min-h-[100px]" />
       </Field>
