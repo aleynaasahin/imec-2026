@@ -573,17 +573,15 @@ async function seed() {
 
   console.log('Seeding sponsor tiers…');
   for (const tier of SPONSOR_TIERS) {
-    let t2 = await prisma.sponsorTier.findFirst({ where: { nameTr: tier.nameTr } });
-    if (!t2) {
-      t2 = await prisma.sponsorTier.create({
-        data: { nameTr: tier.nameTr, nameEn: tier.nameEn, order: tier.order },
-      });
-    }
+    // Seed runs on every deploy: only fill a tier when it is first created, so sponsors
+    // renamed or deleted in the admin panel are not re-added as duplicates.
+    const existing = await prisma.sponsorTier.findFirst({ where: { nameTr: tier.nameTr } });
+    if (existing) continue;
+    const t2 = await prisma.sponsorTier.create({
+      data: { nameTr: tier.nameTr, nameEn: tier.nameEn, order: tier.order },
+    });
     for (const s of tier.sponsors) {
-      const exists = await prisma.sponsor.findFirst({ where: { tierId: t2.id, name: s.name } });
-      if (!exists) {
-        await prisma.sponsor.create({ data: { tierId: t2.id, name: s.name, order: s.order } });
-      }
+      await prisma.sponsor.create({ data: { tierId: t2.id, name: s.name, order: s.order } });
     }
   }
 
